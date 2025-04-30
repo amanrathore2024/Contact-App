@@ -1,0 +1,59 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "f74a71e1c78660dc7379056ba8b60c67",
+    "entities": [
+      {
+        "tableName": "Contact",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Fname` TEXT NOT NULL, `Lname` TEXT NOT NULL, `PhoneNo` TEXT NOT NULL, `email` TEXT NOT NULL DEFAULT '')",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Fname",
+            "columnName": "Fname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Lname",
+            "columnName": "Lname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "PhoneNo",
+            "columnName": "PhoneNo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f74a71e1c78660dc7379056ba8b60c67')"
+    ]
+  }
+}
