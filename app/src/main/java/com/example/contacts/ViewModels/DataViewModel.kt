@@ -1,6 +1,5 @@
 package com.example.contacts.ViewModels
 
-import android.content.Context
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
