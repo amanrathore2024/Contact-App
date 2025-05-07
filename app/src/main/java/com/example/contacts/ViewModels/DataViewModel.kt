@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.contact.data.entities.Contact
 import com.example.contacts.Repository
-import com.example.contacts.data.entities.DeletedContact
 import com.example.contacts.utils.toDeletedContact
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
