@@ -2,8 +2,9 @@ package com.example.contacts.ViewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.contacts.data.DAO.DeleteContactDao
+import com.example.contacts.Repository
 import com.example.contacts.data.entities.DeletedContact
+import com.example.contacts.utils.toContact
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -12,11 +13,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DeletedContactViewModel @Inject constructor(
-    private val deletedContactDao: DeleteContactDao
+    val repository: Repository
 ) : ViewModel() {
 
-    private val _deletedContacts = MutableStateFlow<List<DeletedContact>>(emptyList())
-    val deletedContacts: StateFlow<List<DeletedContact>> = _deletedContacts
+    private val _deletedContactslist = MutableStateFlow<List<DeletedContact>>(emptyList())
+    val deletedContactslist: StateFlow<List<DeletedContact>> = _deletedContactslist
 
     init {
         getDeletedContacts()
@@ -24,11 +25,25 @@ class DeletedContactViewModel @Inject constructor(
 
     private fun getDeletedContacts() {
         viewModelScope.launch {
-            deletedContactDao.getDeletedContact().collect {
-                _deletedContacts.value = it
+            repository.getDeletedContacts().collect {
+                _deletedContactslist.value = it
             }
         }
     }
+
+    fun deleteContact( contact: DeletedContact){
+        viewModelScope.launch {
+            repository.deleteDeletedContact(contact)
+        }
+    }
+
+    fun restoreContact( contact: DeletedContact){
+        viewModelScope.launch {
+            repository.upsertcon(contact.toContact())
+        }
+    }
+
+
 
 
 }
