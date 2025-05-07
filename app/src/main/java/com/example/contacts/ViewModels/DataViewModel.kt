@@ -1,5 +1,7 @@
 package com.example.contacts.ViewModels
 
+import android.annotation.SuppressLint
+import android.content.Context
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,18 +16,19 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@SuppressLint("StaticFieldLeak")
 @HiltViewModel
 class DataViewModel @Inject constructor(
-    val repository: Repository
-   // val context: Context
+    private val repository: Repository,
+     val context: Context
 ): ViewModel() {
     private val _state = MutableStateFlow(AppState())
     val state = _state.asStateFlow()
 
-    var Fname = mutableStateOf("")
+    var fname = mutableStateOf("")
     var lname = mutableStateOf("")
     var phoneNo = mutableStateOf("")
-    var id = mutableStateOf<Int>(0)
+    var id = mutableStateOf(0)
     var email = mutableStateOf("")
 
     var getAllContact : Flow<List<Contact>>

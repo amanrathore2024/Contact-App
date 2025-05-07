@@ -215,7 +215,7 @@ fun ContactItem(
                         icon = Icons.Rounded.Edit,
                         color = Color(0xFF2196F3),
                         onClick = {
-                            viewModel.Fname.value = contact.Fname
+                            viewModel.fname.value = contact.Fname
                             viewModel.lname.value = contact.Lname
                             viewModel.phoneNo.value = contact.PhoneNo
                             viewModel.id.value = contact.id

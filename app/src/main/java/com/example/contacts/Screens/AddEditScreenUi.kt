@@ -100,8 +100,8 @@ fun AddEditScreenUi(
                 Column(modifier = Modifier.padding(16.dp)) {
 
                     OutlinedTextField(
-                        value = viewModel.Fname.value,
-                        onValueChange = { viewModel.Fname.value = it },
+                        value = viewModel.fname.value,
+                        onValueChange = { viewModel.fname.value = it },
                         placeholder = { Text("First Name") },
                         label = { Text("First Name") },
                         modifier = Modifier.fillMaxWidth()
@@ -144,7 +144,7 @@ fun AddEditScreenUi(
                             viewModel.upsertContact(
                                 Contact(
                                     id = viewModel.id.value,
-                                    Fname = viewModel.Fname.value,
+                                    Fname = viewModel.fname.value,
                                     Lname = viewModel.lname.value,
                                     PhoneNo = viewModel.phoneNo.value,
                                     email = viewModel.email.value
@@ -152,7 +152,7 @@ fun AddEditScreenUi(
                             )
                             navController.popBackStack()
                             viewModel.apply {
-                                Fname.value = ""
+                                fname.value = ""
                                 lname.value = ""
                                 phoneNo.value = ""
                                 email.value = ""
