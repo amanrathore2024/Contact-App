@@ -17,8 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DataViewModel @Inject constructor(
-    val repository: Repository,
-    val context: Context
+    val repository: Repository
+   // val context: Context
 ): ViewModel() {
     private val _state = MutableStateFlow(AppState())
     val state = _state.asStateFlow()
@@ -29,7 +29,7 @@ class DataViewModel @Inject constructor(
     var id = mutableStateOf<Int>(0)
     var email = mutableStateOf("")
 
-    lateinit var getAllContact : Flow<List<Contact>>
+    var getAllContact : Flow<List<Contact>>
     init {
         getAllContact =  repository.getAllContact()
         viewModelScope.launch {
