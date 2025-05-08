@@ -53,7 +53,7 @@ cd ContactApp
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots 
 
 ### ➕ Add Contact Screen
 <img src="WhatsApp Image 2025-04-30 at 23.19.36_c2381739.jpg" alt="Add Contact Screen" width="300"/>
@@ -74,7 +74,7 @@ cd ContactApp
 | Hilt            | Dependency Injection        |
 | Room            | Local Database              |
 | Navigation      | Compose Navigation          |
-| Coil            | Image Loading (if used)     |
+| Coil            | Image Loading      |
 | KotlinX         | Coroutines for async ops    |
 
 ---
