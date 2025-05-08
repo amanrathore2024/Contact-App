@@ -53,18 +53,6 @@ cd ContactApp
 
 ---
 
-## 📸 Screenshots 
-
-### ➕ Add Contact Screen
-<img src="WhatsApp Image 2025-04-30 at 23.19.36_c2381739.jpg" alt="Add Contact Screen" width="300"/>
-
-### 📇 Contact List Screen
-<img src="WhatsApp Image 2025-04-30 at 23.19.36_c77f03db.jpg" alt="Contact List Screen" width="300"/>
-
-### 🗑 Deleted Contacts Screen
-<img src="WhatsApp Image 2025-04-30 at 23.19.36_e4521e6c.jpg" alt="Deleted Contacts Screen" width="300"/>
-
----
 
 ## 🧾 Dependencies
 
